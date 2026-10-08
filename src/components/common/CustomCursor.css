@@ -1,0 +1,71 @@
+.custom-cursor-dot {
+  position: fixed;
+  top: -3px;
+  left: -3px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0;
+  will-change: transform;
+  /* Crucial: NO transition on transform to eliminate input lag */
+}
+
+.custom-cursor-follower {
+  position: fixed;
+  top: -18px;
+  left: -18px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(195, 164, 123, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  will-change: transform;
+  /* Only transition dimensions and color, NEVER transform */
+  transition: width 0.2s ease,
+              height 0.2s ease,
+              background-color 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.custom-cursor-follower.is-hover {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: -25px;
+  border-color: var(--accent);
+  background-color: rgba(195, 164, 123, 0.08);
+}
+
+.custom-cursor-follower.has-text {
+  width: 64px;
+  height: 64px;
+  top: -32px;
+  left: -32px;
+  background-color: rgba(12, 11, 10, 0.88);
+  border-color: var(--accent);
+  backdrop-filter: blur(4px);
+}
+
+.cursor-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .custom-cursor-dot,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+}

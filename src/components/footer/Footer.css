@@ -1,0 +1,123 @@
+.editorial-footer {
+  position: relative;
+  background-color: #050504;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: clamp(4rem, 6vw, 6rem);
+  padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.footer-top-tier {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: clamp(2.5rem, 4vw, 4rem);
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-brand-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.footer-role-line {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+}
+
+.footer-location-tag {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+.back-to-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  background: var(--bg-surface);
+  transition: all 0.25s var(--ease-smooth);
+}
+
+.back-to-top-btn:hover {
+  border-color: var(--accent);
+  background: rgba(195, 164, 123, 0.08);
+}
+
+.back-to-top-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.back-to-top-btn:hover .back-to-top-icon-wrap {
+  transform: translateY(-3px);
+}
+
+.footer-bottom-tier {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-links-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.footer-nav-link:hover {
+  color: var(--accent);
+}
+
+.footer-copyright-line {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+@media (max-width: 768px) {
+  .footer-top-tier {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-tier {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+}

@@ -1,0 +1,295 @@
+/* Hero & 3D Scene Styles */
+
+.hero-wrapper {
+  position: relative;
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: var(--bg-deep);
+  padding: 0 var(--content-padding);
+}
+
+.hero-scene-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.92;
+  transition: opacity 0.8s ease;
+}
+
+.hero-scene-container.is-loading {
+  opacity: 0;
+}
+
+.hero-scene-container.is-ready {
+  opacity: 0.92;
+}
+
+.shader-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.scene-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 45%,
+    transparent 15%,
+    rgba(7, 7, 6, 0.4) 60%,
+    rgba(7, 7, 6, 0.95) 100%
+  );
+  z-index: 2;
+}
+
+.hero-scene-fallback {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(195, 164, 123, 0.12) 0%, transparent 70%),
+              linear-gradient(180deg, #070706 0%, #0d0c0a 100%);
+}
+
+/* Hero Content Layers */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  padding-top: calc(var(--nav-height) + 1.75rem);
+  padding-bottom: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100svh;
+  pointer-events: none;
+}
+
+/* Top Meta Bar */
+.hero-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.85rem;
+  pointer-events: auto;
+}
+
+.meta-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.meta-name {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.meta-separator {
+  color: var(--text-dim);
+}
+
+.meta-sub {
+  color: var(--text-secondary);
+}
+
+/* Center Typography Layout */
+.hero-center-typography {
+  margin: auto 0;
+  padding: 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: auto;
+  max-width: 950px;
+}
+
+/* Status Pill */
+.hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.95rem;
+  background: rgba(195, 164, 123, 0.07);
+  border: 1px solid rgba(195, 164, 123, 0.22);
+  border-radius: 999px;
+  margin-bottom: 1.75rem;
+  backdrop-filter: blur(8px);
+}
+
+.status-ping-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #4ade80;
+  box-shadow: 0 0 10px #4ade80;
+}
+
+.status-sparkle {
+  color: var(--accent);
+}
+
+.status-pill-text {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Modern Headline */
+.hero-main-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title-line {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.6vw, 3.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 0%, #ebe5d8 65%, #beb4a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.6));
+}
+
+.hero-title-line.text-silver-gradient {
+  background: linear-gradient(180deg, #ede6d6 0%, #bbb09d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-title-line.accent-gradient-word {
+  background: linear-gradient(180deg, #f7ecd7 0%, #c3a47b 60%, #9c7b4f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 25px rgba(195, 164, 123, 0.25));
+}
+
+.hero-supporting {
+  max-width: 42rem;
+  font-size: clamp(1.02rem, 1.35vw, 1.2rem);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-weight: 400;
+  margin-bottom: 1.75rem;
+}
+
+/* Discipline Strip */
+.hero-discipline-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  background: rgba(18, 17, 16, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+}
+
+.discipline-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.discipline-dot {
+  color: var(--accent);
+}
+
+/* Bottom Actions */
+.hero-bottom-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.5rem;
+  pointer-events: auto;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.hero-explore-btn {
+  padding: 0.9rem 1.85rem;
+}
+
+.hero-scroll-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.scroll-line-animation {
+  width: 48px;
+  height: 1px;
+  background: var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line-animation::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  animation: scrollLineSweep 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scrollLineSweep {
+  0% { transform: translateX(-100%); }
+  50%, 100% { transform: translateX(100%); }
+}
+
+@media (max-width: 768px) {
+  .hero-top-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  .hero-title-line {
+    font-size: clamp(1.8rem, 7.5vw, 2.4rem);
+  }
+  .hero-bottom-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+}

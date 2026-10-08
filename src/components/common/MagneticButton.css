@@ -1,0 +1,102 @@
+.magnetic-btn-editorial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease,
+              border-color 0.3s ease,
+              color 0.3s ease,
+              box-shadow 0.3s ease;
+  will-change: transform;
+  user-select: none;
+}
+
+.btn-inner-content {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  z-index: 1;
+}
+
+.magnetic-btn-editorial:hover .btn-shimmer {
+  transform: translateX(100%);
+}
+
+/* Variants */
+.magnetic-primary {
+  background-color: var(--accent);
+  color: #0c0b0a;
+  border: 1px solid var(--accent);
+}
+
+.magnetic-primary:hover {
+  background-color: var(--accent-bright);
+  box-shadow: 0 4px 20px rgba(195, 164, 123, 0.35);
+}
+
+.magnetic-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+.magnetic-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: rgba(195, 164, 123, 0.06);
+}
+
+.magnetic-outline {
+  background: rgba(18, 17, 16, 0.8);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  border: 1px solid var(--border-mid);
+}
+
+.magnetic-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent-bright);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.magnetic-ghost {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  padding: 0.75rem 1.25rem;
+}
+
+.magnetic-ghost:hover {
+  color: var(--accent);
+}
+
+.magnetic-btn-editorial:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
