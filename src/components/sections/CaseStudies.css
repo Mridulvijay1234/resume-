@@ -182,6 +182,48 @@
 @media (max-width: 1024px) {
   .dossier-content-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .case-tabs-strip {
+    gap: 0.65rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .case-tab-item {
+    padding: 0.7rem 1.1rem;
+    gap: 0.6rem;
+  }
+
+  .case-tab-title {
+    font-size: 0.92rem;
+  }
+
+  .case-dossier-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .dossier-header {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dossier-num-watermark {
+    font-size: 2.75rem;
+    align-self: flex-end;
+  }
+
+  .dossier-heading {
+    font-size: clamp(1.4rem, 6vw, 1.95rem);
+  }
+}
+
+@media (max-width: 380px) {
+  .case-dossier-card {
+    padding: 1.25rem 0.9rem;
   }
 }

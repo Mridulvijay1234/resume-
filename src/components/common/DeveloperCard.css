@@ -420,14 +420,54 @@
 @media (max-width: 640px) {
   .developer-card-wrapper {
     max-width: 100%;
+    perspective: none;
   }
+
+  .card-3d-surface {
+    transform: none !important;
+  }
+
   .card-top-bar {
     padding: 0.7rem 1rem;
   }
+
   .floating-role-tag {
     bottom: 0.75rem;
     left: 0.75rem;
     font-size: 0.58rem;
     padding: 0.35rem 0.65rem;
+  }
+
+  .portrait-modal-backdrop {
+    padding: 0.75rem;
+  }
+
+  .portrait-modal-content {
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+
+  .modal-full-img {
+    max-height: 55vh;
+  }
+
+  .modal-caption-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .card-details-panel {
+    padding: 1rem 0.75rem;
+  }
+
+  .spec-item {
+    font-size: 0.7rem;
+  }
+
+  .card-id-badge {
+    font-size: 0.62rem;
   }
 }

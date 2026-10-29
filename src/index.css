@@ -28,10 +28,10 @@
   --text-muted: #8f8574;
   --text-dim: #5c564b;
 
-  /* Modern Creative Tech Typography Stacks */
-  --font-display: "Syne", "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: "Syne", "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-heading: "Syne", "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Editorial Serif & Sans-Serif Typography Stacks */
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Baskerville, Georgia, serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Baskerville, Georgia, serif;
+  --font-heading: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Baskerville, Georgia, serif;
   --font-sans: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
 
@@ -263,5 +263,71 @@ img, video, canvas, svg {
 
   .cursor-follower, .cursor-dot {
     display: none !important;
+  }
+}
+
+/* Extra Small Phones (iPhone SE, Galaxy Fold, 320px - 380px) */
+@media (max-width: 380px) {
+  :root {
+    --content-padding: 0.95rem;
+    --nav-height: 3.75rem;
+  }
+
+  html {
+    font-size: 14.5px;
+  }
+
+  .editorial-heading-lg {
+    font-size: 1.75rem;
+  }
+
+  .editorial-heading-md {
+    font-size: 1.3rem;
+  }
+}
+
+/* Standard Mobile (381px - 640px) */
+@media (min-width: 381px) and (max-width: 640px) {
+  :root {
+    --content-padding: 1.25rem;
+  }
+}
+
+/* Tablets (Portrait & Landscape: 769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --content-padding: 2rem;
+    --site-max-width: 980px;
+  }
+}
+
+/* Standard Laptops (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  :root {
+    --content-padding: 2.75rem;
+    --site-max-width: 1280px;
+  }
+}
+
+/* Large LCD / 2K / 4K / Ultrawide Displays (1920px+) */
+@media (min-width: 1920px) {
+  :root {
+    --site-max-width: 1560px;
+    --content-padding: 4.5rem;
+  }
+
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 2560px) {
+  :root {
+    --site-max-width: 1800px;
+    --content-padding: 5.5rem;
+  }
+
+  html {
+    font-size: 18px;
   }
 }

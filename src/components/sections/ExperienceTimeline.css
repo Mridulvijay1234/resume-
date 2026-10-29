@@ -111,6 +111,14 @@
   gap: 0.4rem;
 }
 
+.exp-description-text {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  font-family: var(--font-sans);
+}
+
 .exp-company-wrap {
   display: flex;
   align-items: center;
@@ -192,5 +200,37 @@
   .timeline-dossier-card {
     margin-left: 0;
     width: 100%;
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-spine-line {
+    left: 8px;
+  }
+
+  .timeline-entry-row {
+    padding-left: 24px;
+  }
+
+  .timeline-node-pin {
+    left: -7px;
+  }
+
+  .timeline-dossier-card {
+    padding: 1.25rem 0.9rem;
+  }
+
+  .exp-company-name {
+    font-size: 1.15rem;
+  }
+
+  .exp-role-title {
+    font-size: 0.76rem;
+  }
+
+  .exp-tag-pill {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.55rem;
   }
 }

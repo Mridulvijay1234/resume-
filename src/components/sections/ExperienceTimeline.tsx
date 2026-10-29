@@ -46,6 +46,10 @@ export const ExperienceTimeline: React.FC = () => {
                     <span className="exp-role-title">{exp.role}</span>
                   </div>
 
+                  {exp.description && (
+                    <p className="exp-description-text">{exp.description}</p>
+                  )}
+
                   <div className="exp-highlights-wrap">
                     <span className="exp-highlights-heading">ENGINEERING FOCUS &amp; CONTRIBUTIONS:</span>
                     <ul className="exp-tags-cluster">

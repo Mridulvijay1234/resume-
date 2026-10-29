@@ -113,11 +113,47 @@
   .footer-top-tier {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1.5rem;
   }
 
   .footer-bottom-tier {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-brand-title {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .footer-role-line {
+    font-size: 0.95rem;
+  }
+
+  .back-to-top-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-links-group {
+    gap: 1rem 1.25rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .footer-links-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .footer-nav-link {
+    font-size: 0.72rem;
+  }
+
+  .footer-copyright-line {
+    font-size: 0.68rem;
   }
 }

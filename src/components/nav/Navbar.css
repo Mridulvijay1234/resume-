@@ -60,13 +60,13 @@
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
+  gap: clamp(1rem, 2vw, 2.25rem);
 }
 
 .nav-link {
   position: relative;
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: clamp(0.7rem, 0.9vw, 0.76rem);
   letter-spacing: 0.16em;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -100,12 +100,26 @@
 .nav-resume-btn {
   padding: 0.55rem 1.15rem;
   font-size: 0.72rem;
+  white-space: nowrap;
 }
 
 .mobile-menu-toggle {
   display: none;
   color: var(--text-primary);
+  min-width: 44px;
+  min-height: 44px;
+  display: none;
+  align-items: center;
+  justify-content: center;
   padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-menu-toggle:active {
+  background: rgba(195, 164, 123, 0.1);
+  color: var(--accent);
 }
 
 /* Mobile Drawer */
@@ -117,7 +131,10 @@
   bottom: 0;
   background: rgba(7, 7, 6, 0.98);
   backdrop-filter: blur(20px);
-  padding: 2.5rem var(--content-padding);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 2rem var(--content-padding) max(2.5rem, env(safe-area-inset-bottom));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
@@ -134,38 +151,54 @@
 .mobile-nav-list {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.25rem;
+  padding-bottom: 2rem;
 }
 
 .mobile-nav-link {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 6vw, 1.85rem);
   letter-spacing: -0.01em;
   font-weight: 700;
   color: var(--text-primary);
   display: block;
+  padding: 0.4rem 0;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-link:active {
+  color: var(--accent);
 }
 
 .mobile-resume-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   padding: 0.85rem 1.5rem;
   border: 1px solid var(--accent);
   color: var(--accent);
   font-family: var(--font-mono);
   font-size: 0.8rem;
   letter-spacing: 0.14em;
+  width: 100%;
+  max-width: 320px;
 }
 
 @media (max-width: 900px) {
   .desktop-nav-menu,
   .nav-resume-btn {
-    display: none;
+    display: none !important;
   }
 
   .mobile-menu-toggle {
-    display: block;
+    display: flex !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .editorial-logo {
+    font-size: 1.02rem;
   }
 }

@@ -70,7 +70,7 @@ export const Contact: React.FC = () => {
       <div className="editorial-container">
         {/* Header Block */}
         <div className="contact-header-block">
-          <span className="section-meta-label">11 / CONTACT</span>
+          <span className="section-meta-label">10 / CONTACT</span>
           <h2 className="editorial-heading-lg">
             HAVE AN IDEA?<br />
             LET'S BUILD IT.
@@ -81,8 +81,8 @@ export const Contact: React.FC = () => {
           {/* Contact Details & Socials Column */}
           <div className="contact-details-column">
             <p className="contact-intro-text">
-              Whether you are looking to build a high-performance web product, an AI-assisted interface,
-              or discuss engineering opportunities, reach out directly.
+              Whether it's a website, digital product, frontend experience or experimental AI system,
+              I'm interested in turning meaningful ideas into working products.
             </p>
 
             <div className="contact-info-cards-stack">

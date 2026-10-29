@@ -11,7 +11,7 @@ export const About: React.FC = () => {
       <div className="editorial-container">
         {/* Header Block */}
         <div className="about-header-block">
-          <span className="section-meta-label">10 / ABOUT</span>
+          <span className="section-meta-label">09 / ABOUT</span>
           <h2 className="editorial-heading-lg">
             A DEVELOPER<br />
             BETWEEN CODE<br />

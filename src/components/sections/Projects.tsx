@@ -167,7 +167,7 @@ export const Projects: React.FC = () => {
             </div>
 
             <div className="hud-footer">
-              <span>CODYART SOFTWARE SOLUTIONS // ASCEND ENGINE</span>
+              <span>CodYart Software Solutions // ASCEND ENGINE</span>
               <span className="text-accent">VERIFIED 2026</span>
             </div>
           </div>
@@ -580,7 +580,7 @@ export const Projects: React.FC = () => {
         {/* Section Heading & GitHub Profile Banner */}
         <div className="projects-header-block">
           <div className="projects-header-top">
-            <span className="section-meta-label">02 / GITHUB &amp; SELECTED WORK</span>
+            <span className="section-meta-label">02 / SELECTED WORK</span>
             <a
               href="https://github.com/Mridulvijay1234"
               target="_blank"
@@ -595,11 +595,11 @@ export const Projects: React.FC = () => {
           </div>
 
           <h2 className="editorial-heading-lg">
-            ENGINEERED<br />PROJECTS.
+            SELECTED<br />PROJECTS.
           </h2>
 
           <p className="projects-subtitle">
-            A curated portfolio index spanning enterprise web systems, AI visual workflows, low-level systems and interactive UI experiments.
+            A curated portfolio index spanning responsive web platforms, AI visual workflows, low-level systems and interactive UI experiments.
           </p>
         </div>
 
@@ -676,10 +676,10 @@ export const Projects: React.FC = () => {
 
         {/* Editorial Projects Layout */}
         <div className="projects-stack">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <article
               key={project.id}
-              className="project-editorial-card border-subtle-box"
+              className={`project-editorial-card border-subtle-box ${index % 2 === 1 ? 'is-reversed' : ''}`}
             >
               <div className="project-card-grid">
                 {/* Information Column */}
@@ -716,7 +716,16 @@ export const Projects: React.FC = () => {
                   </div>
 
                   <div className="project-card-actions">
-                    {project.githubUrl && (
+                    {project.link ? (
+                      <a
+                        href={project.link}
+                        className="project-action-link"
+                        data-interactive="true"
+                      >
+                        <span>VIEW PROJECT</span>
+                        <ExternalLink size={13} />
+                      </a>
+                    ) : project.githubUrl ? (
                       <a
                         href={project.githubUrl}
                         target="_blank"
@@ -725,10 +734,10 @@ export const Projects: React.FC = () => {
                         data-interactive="true"
                       >
                         <GitBranch size={13} />
-                        <span>EXPLORE ON GITHUB</span>
+                        <span>VIEW PROJECT</span>
                         <ExternalLink size={13} />
                       </a>
-                    )}
+                    ) : null}
 
                     {project.githubUrl && (
                       <button

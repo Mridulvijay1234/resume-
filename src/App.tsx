@@ -15,6 +15,7 @@ import Certifications from './components/sections/Certifications';
 import About from './components/sections/About';
 import Contact from './components/sections/Contact';
 import Footer from './components/footer/Footer';
+import './App.css';
 
 export const App: React.FC = () => {
   const [introDone, setIntroDone] = useState(false);

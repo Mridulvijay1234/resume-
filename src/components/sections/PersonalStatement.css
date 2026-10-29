@@ -166,6 +166,27 @@
     gap: 2rem;
   }
   .value-propositions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .value-propositions-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .statement-author-pill {
+    max-width: 100%;
+  }
+
+  .value-card-block {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .value-card-top {
+    margin-bottom: 1.25rem;
   }
 }

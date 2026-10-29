@@ -61,13 +61,15 @@
   color: var(--text-primary);
   font-family: var(--font-mono);
   margin-top: 0.2rem;
-  display: block;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .copy-btn {
   padding: 0.5rem;
   color: var(--text-muted);
   transition: color 0.2s ease;
+  flex-shrink: 0;
 }
 
 .copy-btn:hover {
@@ -237,6 +239,43 @@
 @media (max-width: 900px) {
   .contact-content-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .editorial-contact-form {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .contact-intro-text {
+    font-size: 0.98rem;
+  }
+
+  .contact-info-card {
+    padding: 1rem 1.15rem;
+  }
+
+  .social-profile-badge {
+    padding: 0.75rem 1rem;
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .editorial-contact-form {
+    padding: 1.25rem 0.85rem;
+  }
+
+  .contact-info-card {
+    padding: 0.85rem;
+  }
+
+  .info-card-left {
+    gap: 0.6rem;
+  }
+
+  .info-card-value {
+    font-size: 0.82rem;
   }
 }
